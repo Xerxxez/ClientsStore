@@ -58,7 +58,7 @@ namespace MyStore.Pages.Clients
             clientInfo.Name = ""; clientInfo.Email = ""; clientInfo.Phone = ""; clientInfo.Address = ""; //deletes input text from user
             successMessage = "New client added correctly";
 
-            Response.Redirect("/Clients/Index"); 
+            Response.Redirect("/Clients/Index"); //redirect user to client
 
         }
     }

@@ -1,23 +1,21 @@
-﻿@page
+﻿
+@page 
 @using System.Data.SqlClient;
 @{
-    //geht noch nicht
    try
    {
-         string id = Request.Query["Id"];
-         string connectionString = "Data Source=DESKTOP-FTDN9V8\\XERXEZ;Initial Catalog=CSharpStore;Integrated Security=True";
-         using (SqlConnection connection = new SqlConnection(connectionString))
-         {
-           connection.Open();
-            
+       string id = Request.Query["id"]; /*read id to delete*/
+       string connectionString = "Data Source=DESKTOP-FTDN9V8\\XERXEZ;Initial Catalog=CSharpStore;Integrated Security=True";
+       using (SqlConnection connection = new SqlConnection(connectionString))
+       {
+         connection.Open();
+       
            
-        string sql = "SELECT * FROM clients WHERE Id=@Id";
+        string sql = "DELETE FROM clients WHERE Id=@id";
         using (SqlCommand command = new SqlCommand(sql, connection))
         {
-        command.Parameters.AddWithValue("@Id", id); //adds requested id to id
-        command.ExecuteNonQuery();
-
-                    
+        command.Parameters.AddWithValue("@Id", id); /*adds requested id to id*/
+        command.ExecuteNonQuery();          
         } 
         }
     }
@@ -26,5 +24,7 @@
          
         }
 
-        Response.Redirect("/Clients/Index");
+        Response.Redirect("/Clients/Index"); /*user wird zu clients redirected*/
 }
+
+  

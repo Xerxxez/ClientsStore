@@ -22,11 +22,11 @@ namespace MyStore.Pages.Clients
                     connection.Open();
                     string sql = "SELECT * FROM clients WHERE Id=@Id";
 
-                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    using (SqlCommand sqlCommand = new SqlCommand(sql, connection))
                     {
 
-                        command.Parameters.AddWithValue("@id", id); //adds requested id to id
-                        using (SqlDataReader reader = command.ExecuteReader())
+                        sqlCommand.Parameters.AddWithValue("@id", id); //adds requested id to id
+                        using (SqlDataReader reader = sqlCommand.ExecuteReader())
                         {
                             if (reader.Read())
                             {
@@ -40,7 +40,7 @@ namespace MyStore.Pages.Clients
                             }
                         }
 
-                        command.ExecuteNonQuery();
+                        sqlCommand.ExecuteNonQuery();
 
                     }
                 }

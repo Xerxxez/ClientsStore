@@ -24,7 +24,7 @@ namespace MyStore.Pages.Clients
                             {
 
                                 ClientInfo clientInfo = new ClientInfo();
-                                clientInfo.Id = " " + reader.GetInt32(0);//damit string " " einfuegen
+                                clientInfo.Id = " " + reader.GetInt32(0);//damit string draus wird " " einfuegen
                                 clientInfo.Name = reader.GetString(1);
                                 clientInfo.Email =  reader.GetString(2);
                                 clientInfo.Phone = reader.GetString(3);

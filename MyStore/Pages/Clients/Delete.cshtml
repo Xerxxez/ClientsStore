@@ -1,0 +1,30 @@
+﻿@page
+@using System.Data.SqlClient;
+@{
+    //geht noch nicht
+   try
+   {
+         string id = Request.Query["Id"];
+         string connectionString = "Data Source=DESKTOP-FTDN9V8\\XERXEZ;Initial Catalog=CSharpStore;Integrated Security=True";
+         using (SqlConnection connection = new SqlConnection(connectionString))
+         {
+           connection.Open();
+            
+           
+        string sql = "SELECT * FROM clients WHERE Id=@Id";
+        using (SqlCommand command = new SqlCommand(sql, connection))
+        {
+        command.Parameters.AddWithValue("@Id", id); //adds requested id to id
+        command.ExecuteNonQuery();
+
+                    
+        } 
+        }
+    }
+        catch(Exception ex)
+        {
+         
+        }
+
+        Response.Redirect("/Clients/Index");
+}

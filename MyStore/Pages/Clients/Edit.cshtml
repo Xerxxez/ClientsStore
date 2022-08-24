@@ -7,14 +7,33 @@
 
 
     @if (Model.errorMessage.Length > 0 ){
+        //checken ob error message existiert
         <div class='alert alert-warning alert-dismissable fade show' role='alert'>
             <strong>@Model.errorMessage</strong>
             <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
             </div>
     }
   
-@*   <form method ="POST" class="row g-3">
-       <input type="hidden" name="Id" value="@Model.clientInfo.Id"
+   <form method ="POST" class="row g-3">
+       <input type="hidden" name="Id" value="@Model.clientInfo.Id" />
+  <div class="col-md-6">
+    <label for="Name" class="form-label">Name</label>
+    <input type="text" class="form-control" name="Name" value="@Model.clientInfo.Name">
+  </div>
+  <div class="col-md-6">
+    <label for="Email" class="form-label">Email</label>
+    <input type="text" class="form-control" name="Email" value="@Model.clientInfo.Email">
+  </div>
+  <div class="col-md-6">
+    <label for="Phone" class="form-label">Phone</label>
+    <input type="text" class="form-control" name="Phone" value="@Model.clientInfo.Phone">
+  </div>
+  <div class="col-md-6">
+    <label for="Address" class="form-label">Address</label>
+    <input type="text" class="form-control" name="Address" value="@Model.clientInfo.Address">
+  </div>@*
+     <form method ="POST" class="row g-3">
+    <input type="hidden" name="Id" value="@Model.clientInfo.Id"
   <div class="col-md-6">
     <label for="Name" class="form-label">Name</label>
     <input type="text" class="form-control" name="Name" value="@Model.clientInfo.Name">
@@ -31,23 +50,6 @@
     <label for="Address" class="form-label">Address</label>
     <input type="text" class="form-control" name="Address" value="@Model.clientInfo.Address">
   </div>*@
-     <form method ="POST" class="row g-3">
-  <div class="col-md-6">
-    <label for="inputEmail4" class="form-label">Name</label>
-    <input type="text" class="form-control" name="Name" value="@Model.clientInfo.Name">
-  </div>
-  <div class="col-md-6">
-    <label for="inputEmail4" class="form-label">Email</label>
-    <input type="text" class="form-control" name="Email" value="@Model.clientInfo.Email">
-  </div>
-  <div class="col-md-6">
-    <label for="inputEmail4" class="form-label">Phone</label>
-    <input type="text" class="form-control" name="Phone" value="@Model.clientInfo.Phone">
-  </div>
-  <div class="col-md-6">
-    <label for="inputEmail4" class="form-label">Address</label>
-    <input type="text" class="form-control" name="Address" value="@Model.clientInfo.Address">
-  </div>
 
             @if (Model.successMessage.Length > 0 ){
         <div class = 'alert alert-warning alert-dismissable fade show' role ='alert'>

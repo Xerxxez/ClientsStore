@@ -72,7 +72,7 @@ namespace MyStore.Pages.Clients
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
-                    string sql = "UPDATE clients" + " SET name=@name, email=@email, phone=@phone, address=@address"
+                    string sql = "UPDATE clients" + " SET name=@Name, email=@Email, phone=@Phone, address=@Address"
                         + " WHERE id=@id";
 
                     using (SqlCommand command = new SqlCommand(sql, connection))
